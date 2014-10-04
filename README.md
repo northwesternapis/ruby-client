@@ -1,6 +1,6 @@
 # Northwestern API
 
-A Ruby wrapper for the Northwestern Course data API.
+A Ruby wrapper for the Northwestern Course Data API.
 
 ## Installation
 
@@ -8,17 +8,17 @@ Add it to your Gemfile:
 
     gem 'northwestern-api'
 
-run:
+to install, run:
 
     $ bundle
 
-Or install it yourself with:
+Or install it directly with:
 
     $ gem install northwestern-api
 
 ## Usage
 
-You'll have to set your client ID somewhere before using the Gem.  If you're using Rails try the `config` directory and make an
+You'll have to set your client ID somewhere before using the gem.  If you're using Rails try the `config` directory and make an
 initializer.
 
 Initialize your key like so:
@@ -31,10 +31,10 @@ Northwestern::API_KEY = "### YOUR_KEY_GOES_HERE ###"
 
 Then you can use the API anywhere without making an instance of it. The
 endpoints from the API are all available and named identically.  For `courses/details` and
-`rooms/details` use `#course_details` and `room_details` respectively.
+`rooms/details` use `#course_details` and `#room_details` respectively.
 
 To specify parameters, pass them as a Ruby hash (not including your API key,
-that gets passed automatically) to each method.  The resulting JSON is also
+it will get passed automatically) to each method.  The resulting JSON is also
 parsed into Ruby Arrays and Hashes (the keys are not symbolized though, you'll
 have to reference them using strings).
 
