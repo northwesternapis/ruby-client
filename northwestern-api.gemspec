@@ -9,6 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Alex Kowalczuk"]
   spec.email         = ["alexskowalczuk@gmail.com"]
   spec.summary       = %q{A Ruby wrapper for the ASG Northwestern Course data API}
+  spec.homepage      = %q{https://github.com/northwesternapis/ruby-client}
   spec.homepage      = ""
   spec.license       = "MIT"
 
