@@ -27,11 +27,7 @@ Initialize the Key like so:
 ```
 require 'northwestern-api'
 
-module Northwestern
-  class Config
-    API_KEY = "###YOUR KEY GOES HERE###"
-  end
-end
+Northwestern::API_KEY = "### YOUR_KEY_GOES_HERE ###"
 ```
 
 Then you can use the API anywhere without making an instance of it. The
@@ -41,7 +37,7 @@ endpoints from the API are all available.  For `courses/details` and
 Pass a list of parameters (not including your API key) as a Ruby hash to the
 method.  The resulting JSON is also parsed into Ruby Arrays and Hashes.
 
-Use like so:
+Use like so (assuming your key as been previously set):
 
 ```ruby
 require 'northwestern-api'

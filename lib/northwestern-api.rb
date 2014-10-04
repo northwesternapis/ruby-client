@@ -4,6 +4,7 @@ require 'json'
 
 module Northwestern
   BASE_URL = 'https://api.asg.northwestern.edu/'
+
   class << self
     def terms(params={})
       self.get('/terms', {})
@@ -42,11 +43,11 @@ module Northwestern
     end
 
     def get(path, params)
-      if defined? Northwestern::Config::API_KEY
+      if defined? Northwestern::API_KEY
         uri = URI(BASE_URL)
         uri.path = path
         uri.query = URI.encode_www_form(params.merge(
-          { key: Northwestern::Config::API_KEY }
+          { key: Northwestern::API_KEY }
         ))
 
         JSON.parse(Net::HTTP.get(uri))
