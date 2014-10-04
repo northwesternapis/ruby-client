@@ -10,7 +10,6 @@ Gem::Specification.new do |spec|
   spec.email         = ["alexskowalczuk@gmail.com"]
   spec.summary       = %q{A Ruby wrapper for the ASG Northwestern Course data API}
   spec.homepage      = %q{https://github.com/northwesternapis/ruby-client}
-  spec.homepage      = ""
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
