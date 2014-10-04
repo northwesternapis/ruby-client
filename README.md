@@ -44,19 +44,21 @@ method.  The resulting JSON is also parsed into Ruby Arrays and Hashes.
 Use like so:
 
 ```ruby
+require 'northwestern-api'
+
 all_terms = Northwestern.terms
 # => [{"id"=>4560, "name"=>"2014 Fall", "start_date"=>"2014-09-23",
-"end_date"=>"2014-12-12"}, ... ]
+# "end_date"=>"2014-12-12"}, ... ]
 
 fall2014 = all_terms[0]["id"]
 
 fall_eecs_courses = Northwestern.courses({ term: fall2014, subject: "EECS" })
 # => [{"id"=>109680, "title"=>"An Introduction to Computer Science for
-Everyone", "term"=>"2014 Fall", "instructor"=>"Haoqi Zhang", "subject"=>"EECS",
-"catalog_num"=>"101-0", "section"=>"20", "room"=>"Annenberg Hall G15",
-"meeting_days"=>"MoWe", "start_time"=>"15:00", "end_time"=>"15:50",
-"seats"=>110, "topic"=>nil, "component"=>"LEC", "class_num"=>14597,
-"course_id"=>8093}, ... ]
+# Everyone", "term"=>"2014 Fall", "instructor"=>"Haoqi Zhang", "subject"=>"EECS",
+# "catalog_num"=>"101-0", "section"=>"20", "room"=>"Annenberg Hall G15",
+# "meeting_days"=>"MoWe", "start_time"=>"15:00", "end_time"=>"15:50",
+# "seats"=>110, "topic"=>nil, "component"=>"LEC", "class_num"=>14597,
+# "course_id"=>8093}, ... ]
 ```
 
 ## Issues
