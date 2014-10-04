@@ -18,11 +18,10 @@ Or install it yourself with:
 
 ## Usage
 
-You'll have to set your client ID somewhere, in some sort of config directory
-should do nicely.  If you're using Rails try the `config` directory and make an
+You'll have to set your client ID somewhere before using the Gem.  If you're using Rails try the `config` directory and make an
 initializer.
 
-Initialize the Key like so:
+Initialize your key like so:
 
 ```
 require 'northwestern-api'
@@ -31,13 +30,16 @@ Northwestern::API_KEY = "### YOUR_KEY_GOES_HERE ###"
 ```
 
 Then you can use the API anywhere without making an instance of it. The
-endpoints from the API are all available.  For `courses/details` and
-`rooms/details` just use and underscore.
+endpoints from the API are all available and named identically.  For `courses/details` and
+`rooms/details` use `#course_details` and `room_details` respectively.
 
-Pass a list of parameters (not including your API key) as a Ruby hash to the
-method.  The resulting JSON is also parsed into Ruby Arrays and Hashes.
+To specify parameters, pass them as a Ruby hash (not including your API key,
+that gets passed automatically) to each method.  The resulting JSON is also
+parsed into Ruby Arrays and Hashes (the keys are not symbolized though, you'll
+have to reference them using strings).
 
-Use like so (assuming your key as been previously set):
+Here's how you might use the client to get all the EECS courses taught in Fall
+2014 (assuming your key as been previously set):
 
 ```ruby
 require 'northwestern-api'
@@ -61,4 +63,4 @@ fall_eecs_courses = Northwestern.courses({ term: fall2014, subject: "EECS" })
 
 If you find an issue, please put up a Github Issue request.  If you have an idea
 you think make the gem better or easier to use, feel free to run that by me too.
-Run now it's a very thin wrapper around those functions.
+Run now it's a very thin wrapper around the API and not much else.
